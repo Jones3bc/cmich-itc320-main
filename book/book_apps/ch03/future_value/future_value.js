@@ -22,14 +22,20 @@ do {
 }
 while ( isNaN(years) );
 
-// calulate future value
+// calulate future value (yearly interest)
 let futureValue = investment;
 for (let i = 1; i <= years; i++ ) {
     futureValue += futureValue * rate / 100;
+}
+
+// calculate future value (monthly interest)
+let futureValueMonthly = investment;
+for(let i = 1; i <= years * 12; i++) {
+    futureValueMonthly += futureValueMonthly * (rate / 12) / 100;
 }
 
 // display results
 document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
-document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
+document.write(`<p><label>Future Value:</label> ${futureValueMonthly.toFixed(2)}</p>`);
