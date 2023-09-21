@@ -25,7 +25,19 @@ const processEntries = () => {
     }
 };
 
+var clearEntries = () => {
+    $("#miles").value = "";
+    $("#gallons").value = "";
+    $("#mpg").value = "";
+};
+
+var clearEntryMiles = () => {
+    $("#miles").value = "";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     $("#calculate").addEventListener("click", processEntries);
     $("#miles").focus();
+    $("mpg").addEventListener("dblclick", clearEntries);
+    $("miles").addEventListener("focusin", clearEntries);
 });
