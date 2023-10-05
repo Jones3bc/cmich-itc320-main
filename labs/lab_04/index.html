@@ -9,15 +9,31 @@
 
 <body>
 	<main>
-		<h1>Income Tax Calculator</h1>
+		<h1>Sales Tax Calculator</h1>
+		<p>Enter Subtotal and Tax Rate and click "Calulate".</p>
+		
 		<div>
-			<label>Enter taxable income:</label>
-			<input type="text" id="income" />
-			<input type="button" value="Calculate" name="calculate" id="calculate" />
+			<label>Subtotal:</label>
+			<input type="text" id="subtotal" />
 		</div>
+
 		<div>
-			<label>Income tax owed:</label>
-			<input type="text" id="tax" disabled>
+			<label>Tax Rate:</label>
+			<input type="text" id="taxRate" />
+		</div>
+
+		<div>
+			<label>Sales Tax:</label>
+			<input type="text" id="salesTax" disabled>
+		</div>
+
+		<div>
+			<label>Total:</label>
+			<input type="text" id="total" disabled>
+		</div>
+		<div style="text-align: center">
+			<input type="button" value="Calculate" name="calculate" id="calculate" />
+			<input type="button" value="Clear" name="clear" id="clear" />
 		</div>
 	</main>
 	<script src="calculate_tax.js"></script>
