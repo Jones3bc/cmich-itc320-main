@@ -14,9 +14,9 @@ const $ = selector => document.querySelector(selector);
 function processEntry(){
 	let subtotal = parseFloat($("#subtotal").value);
 	let taxRate = parseFloat($("#taxRate").value);
-	if(subtotal >= 10000 || subtotal <= 0){
+	if(isNaN(subtotal) || subtotal >= 10000 || subtotal <= 0){
 		alert("Subtotal must be > 0 and < 10000");
-	} else if(taxRate >= 12 || taxRate <= 0){
+	} else if(isNaN(taxRate) || taxRate >= 12 || taxRate <= 0){
 		alert("Tax Rate must be > 0 and < 12");
 	} else {
 		taxRate /= 100.0;
