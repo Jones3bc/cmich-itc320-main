@@ -12,30 +12,50 @@ $(document).ready( () => {
 	$("#reservation_form").on("submit", function( event ) {
 		let valid = true;
 
-		if($("#arrival_date").val().trim() == ""){
+		let arrivalDate = $("#arrival_date").val().trim();
+		if(arrivalDate == ""){
 			$("#arrival_date").next().text("This field is required");
 			valid = false;
+		} else {
+			$("#arrival_date").next().text("*");
 		}
+		$("#arrival_date").val(arrivalDate);
 		
-		if($("#nights").val().trim() == "" || isNaN($("#nights").val().trim())){
+		let nights = $("#nights").val().trim();
+		if(nights == "" || isNaN(nights)){
 			$("#nights").next().text("Required and must be numeric");
 			valid = false;
+		} else {
+			$("#nights").next().text("*");
 		}
+		$("#nights").val(nights);
 		
-		if($("#name").val().trim() == ""){
+		let name = $("#name").val().trim();
+		if(name == ""){
 			$("#name").next().text("This field is required");
 			valid = false;
-		} 
+		} else {
+			$("#name").next().text("*");
+		}
+		$("#name").val(name);
 		
-		if($("#email").val().trim() == "" || !$("#email").val().trim().match(emailPattern)){
+		let email = $("#email").val().trim();
+		if(email == "" || !email.match(emailPattern)){
 			$("#email").next().text("Required and must be a valid email");
 			valid = false;
-		} 
+		} else {
+			$("#email").next().text("*");
+		}
+		$("#email").val(email);
 		
-		if($("#phone").val().trim() == "") {
+		let phone = $("#phone").val().trim();
+		if(phone == "") {
 			$("#phone").next().text("This field is required");
 			valid = false;
-		} 
+		} else {
+			$("#phone").next().text("*");
+		}
+		$("#phone").val(phone);
 
 		if(!valid) {
 			event.preventDefault(); //Prevent form from submitting

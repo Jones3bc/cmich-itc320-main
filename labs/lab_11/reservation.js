@@ -1,6 +1,14 @@
 "use strict";
 
 $(document).ready( () => {
+	// Jquery tabs, datepicker, and dialog widgets.
+	$("#tabs").tabs();
+	$("#arrival_date").datepicker({ minDate: 0, maxDate: "+90D" });
+
+	$("#policies").on("click", () => {
+		$( "#dialog" ).dialog();
+	});
+	
 	const emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
 	
 	// move the focus to the first text box
