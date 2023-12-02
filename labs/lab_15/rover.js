@@ -43,6 +43,18 @@ const getOptionHtml = (min, max, selected) => {
     return options;
 };
 
+async function getJson(url){
+    console.log(url);
+
+    let returnJson = null;
+
+    await fetch(url)
+    .then((response) => response.json())
+    .then((json) => returnJson = json);
+
+    return returnJson;
+}
+
 $(document).ready( async () => {
     // get rover data
     const url = domain + request;
